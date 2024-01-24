@@ -19,6 +19,6 @@ if (navigator.mediaDevices.getUserMedia) {
 }
 
 function draw(video) {
-  ctx.drawImage(video, canvas.width, canvas.height);
+  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
   setTimeout(draw, 10, video);
 }
