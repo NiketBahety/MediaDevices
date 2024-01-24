@@ -8,7 +8,7 @@ if (navigator.mediaDevices.getUserMedia) {
     .then(function (s) {
       cam.srcObject = s;
       cam.play();
-      cam.addEventListener("play", function () {
+      cam.addEventListener("playing", function () {
         canvas.width = cam.videoWidth;
         canvas.height = cam.videoHeight;
         draw(this);
@@ -22,6 +22,6 @@ if (navigator.mediaDevices.getUserMedia) {
 }
 
 function draw(video) {
-  ctx.drawImage(video, 0, 0);
+  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
   setTimeout(draw, 10, video);
 }
