@@ -9,6 +9,8 @@ if (navigator.mediaDevices.getUserMedia) {
       cam.srcObject = s;
       cam.play();
       cam.addEventListener("play", function () {
+        canvas.width = cam.videoWidth;
+        canvas.height = cam.videoHeight;
         draw(this);
       });
     })
