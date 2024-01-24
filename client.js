@@ -7,6 +7,7 @@ if (navigator.mediaDevices.getUserMedia) {
     .getUserMedia({ video: true })
     .then(function (s) {
       cam.srcObject = s;
+      cam.play();
       cam.addEventListener("play", function () {
         draw(this);
       });
